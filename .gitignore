@@ -2,3 +2,4 @@
 node_modules
 # Log files
 npm-debug.log*
+/leetcode/editor/cn/doc/content/
