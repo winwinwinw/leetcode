@@ -66,16 +66,30 @@
  * @return {number[]}
  */
 var preorderTraversal = function(root) {
-    let arr = []
-    function dfs(root){
-        if(root == null){
-            return
-        }
-        arr.push(root.val)
-        dfs(root.left)
-        dfs(root.right)
+    // let arr = []
+    // function dfs(root){
+    //     if(root == null){
+    //         return
+    //     }
+    //     arr.push(root.val)
+    //     dfs(root.left)
+    //     dfs(root.right)
+    // }
+    // dfs(root)
+    // return arr
+
+    let res = []
+    if(root === null){
+        return res
     }
-    dfs(root)
-    return arr
+    let walk = [root]
+    while (walk.length){
+        let cur = walk.pop()
+        res.push(cur.val)
+        cur.left && walk.push(cur.left)
+        cur.right && walk.push(cur.right)
+
+    }
+    return res
 };
 //leetcode submit region end(Prohibit modification and deletion)

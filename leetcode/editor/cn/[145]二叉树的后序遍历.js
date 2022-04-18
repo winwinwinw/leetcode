@@ -52,16 +52,30 @@
  * @return {number[]}
  */
 var postorderTraversal = function(root) {
-    let arr = []
-    function dfs(root){
-        if(root == null){
-            return
-        }
-        dfs(root.left)
-        dfs(root.right)
-        arr.push(root.val)
+    // let arr = []
+    // function dfs(root){
+    //     if(root == null){
+    //         return
+    //     }
+    //     dfs(root.left)
+    //     dfs(root.right)
+    //     arr.push(root.val)
+    // }
+    // dfs(root)
+    // return arr
+    let res =[]
+    if(root === null){
+        return res
     }
-    dfs(root)
-    return arr
+    let stack = [root]
+    while (stack.length){
+        let cur = stack.pop()
+        cur.right && stack.push(cur.right)
+        cur.left && stack.push(cur.left)
+        // res.splice(res.length>>1,0,cur.val)
+        res.unshift(cur.val)
+
+    }
+    return res
 };
 //leetcode submit region end(Prohibit modification and deletion)

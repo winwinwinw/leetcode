@@ -48,16 +48,25 @@
  * @return {ListNode}
  */
 var reverseBetween = function(head, left, right) {
-    if (left === right)return head
-    let slow = fast = head
-    let prev = null
-    while (fast !== right){
-        if(fast === left){
-        slow = fast
-        }
-        fast = fast.next
-
+    let dummy = {
+        next:head
     }
-
+    let cur = dummy
+    let l = left-1
+    while (l--){
+        cur = cur.next
+    }
+    let i = right-left
+    let prev = cur.next
+    let c = prev.next
+    while (i--){
+        let tmp = c.next
+        c.next = prev
+        prev = c
+        c =tmp
+    }
+    cur.next.next = c
+    cur.next = prev
+    return dummy.next
 };
 //leetcode submit region end(Prohibit modification and deletion)
