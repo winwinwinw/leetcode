@@ -45,7 +45,11 @@
  *     this.right = (right===undefined ? null : right)
  * }
  */
-/**
+/**作者：许美琦
+ 链接：https://www.nowcoder.com/discuss/936051?type=post&order=create&pos=&page=1&ncTraceId=&channel=-1&source_id=search_post_nctrack&gio_id=A03DF851375478E747C277F5C9FC669C-1650372593055
+ 来源：牛客网
+
+
  * @param {TreeNode} p
  * @param {TreeNode} q
  * @return {boolean}
