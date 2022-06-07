@@ -50,7 +50,7 @@
  * @return {number[]}
  */
 var twoSum = function(nums, target) {
-    let obj = {} //保存索引值
+    let obj = {}
     for(let i = 0;i<nums.length; i++){
         let num =nums[i]
         let n = target - num
