@@ -58,5 +58,18 @@ var sortedArrayToBST = function(nums) {
     root.left = sortedArrayToBST(nums.slice(0,mid))
     root.right = sortedArrayToBST(nums.slice(mid+1))
     return root
+
+    // var twoSum = function(nums, target) {
+//     for(let i=0;i<=nums.length;i++){
+//         for(let j=i+1;j<=nums.length-1;j++){
+//             if((nums[i]+nums[j])===target){
+//                 if(i!==j){
+//                     return[i,j]
+//                 }
+//             }
+//         }
+//     }
+//
+// };
 };
 //leetcode submit region end(Prohibit modification and deletion)
